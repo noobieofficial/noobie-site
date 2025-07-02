@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>NOOBIE - Programming for Everyone</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="documentation.html">Documentation</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+          <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    
+    <!-- INSTANT DOWNLOAD -->
+    <section class="noobie" id="home">
+      <div class="noobie-content">
+        <h1>Learn programming from scratch</h1>
+        <p>NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !</p>
+        <a href="https://noobie-ide.onrender.com" class="cta-button" target="_blank">Start coding  </a>
+      </div>
+      <div class="noobie-image">
+       <a href="index.html"><img src="../loghi/logo_originale.png" alt="noobie" /></a>
+      </div>
+    </section>
+    
+    <!--CODE SECTION-->
+    <section class="code-example">
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">NOOBIE Code Example</span>
+        </div>
+        <div class="code-block" id="code-display">
+          <pre><span class="comment"># Hello World in NOOBIE</span>
+<span class="keyword">SAY</span> <span class="string">"Hello, World!"</span>
+<span class="output">--> Hello, World!</span></pre>
+        </div>
+        <div class="code-buttons">
+          <button onclick="showCode(1)" class="active">1</button>
+          <button onclick="showCode(2)">2</button>
+          <button onclick="showCode(3)">3</button>
+        </div>
+      </div>
+      <div class="code-message">
+        <h1 class="section-title">Coding is simple, fun, and powerful!</h1>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
+          <p>Programming for Everyone</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="documentation.html">Documentation</a>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fa-solid fa-note"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="https://github.com/noobieofficial"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NOOBIE. Made with ❤️ for beginner coders.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
