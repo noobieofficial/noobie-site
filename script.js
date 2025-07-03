@@ -2,9 +2,12 @@
 const menuIcon = document.querySelector(".menu-icon");
 const navbarMenu = document.querySelector(".navbar ul");
 
-function toggleMenu() {
-    navbarMenu.classList.toggle("show");
-}
+  function toggleMenu() {
+    const menu = document.querySelector('.navbar ul');
+    menu.classList.toggle('show');
+  }
+
+
 
 // Code examples data
 const codeSnippets = [
