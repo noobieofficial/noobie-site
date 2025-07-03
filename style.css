@@ -6,16 +6,27 @@
 }
 
 /* Base Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
     color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
     color: var(--dark-blue);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Navbar */
@@ -26,10 +37,13 @@ a {
     padding: 1rem 2rem;
     background: linear-gradient(to right, var(--dark-blue), var(--primary-orange));
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
 }
 
 .navbar .logo img {
     height: 60px;
+    transition: height 0.3s ease;
 }
 
 .navbar ul {
@@ -37,6 +51,7 @@ a {
     display: flex;
     gap: 2rem;
     margin: 0;
+    padding: 0;
 }
 
 .navbar ul li {
@@ -63,6 +78,7 @@ a {
     color: white;
     font-weight: bold;
     font-size: 1.1rem;
+    white-space: nowrap;
 }
 
 .menu-icon {
@@ -70,6 +86,11 @@ a {
     font-size: 2rem;
     color: white;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon:hover {
+    transform: rotate(90deg);
 }
 
 /* Hero Section */
@@ -82,6 +103,7 @@ a {
     background: linear-gradient(to bottom right, #e0f7fa, #fce4ec);
     background-size: cover;
     background-position: center;
+    min-height: 60vh;
 }
 
 .noobie-content {
@@ -91,16 +113,18 @@ a {
 }
 
 .noobie-content h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: bold;
     color: var(--primary-orange);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .noobie-content p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--text);
     margin-bottom: 2rem;
+    max-width: 600px;
 }
 
 .cta-button {
@@ -111,24 +135,29 @@ a {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
     display: inline-block;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .cta-button:hover {
     background-color: #d65c16;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(242, 107, 29, 0.3);
 }
 
 .noobie-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .noobie-image img {
     max-width: 100%;
-    height: 350px;
+    height: auto;
+    max-height: 350px;
+    width: auto;
 }
 
 /* About Page Sections */
@@ -216,7 +245,7 @@ a {
 .vision-content h2,
 .why-noobie-content h2,
 .future-content h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: var(--text);
     margin-bottom: 1.5rem;
     font-weight: 700;
@@ -244,7 +273,7 @@ a {
 .vision-content p,
 .why-noobie-content p,
 .future-content p {
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
     line-height: 1.8;
     color: #555;
     margin-bottom: 1rem;
@@ -259,7 +288,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 8rem;
+    font-size: clamp(4rem, 8vw, 8rem);
     color: var(--dark-blue);
     opacity: 0.7;
     transition: all 0.3s ease;
@@ -339,10 +368,12 @@ a {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     margin: 20px auto;
     max-width: 90%;
+    gap: 2rem;
 }
 
 .code-container {
-    width: 60%;
+    flex: 1;
+    min-width: 0;
     background-color: #161b22;
     border-radius: 8px;
     overflow: hidden;
@@ -354,18 +385,19 @@ a {
     color: #c9d1d9;
     font-weight: bold;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .code-block {
     padding: 20px;
     color: #c9d1d9;
     font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
     white-space: pre-wrap;
     min-height: 120px;
     text-align: left;
     line-height: 1.6;
+    overflow-x: auto;
 }
 
 .code-buttons {
@@ -373,6 +405,7 @@ a {
     display: flex;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .code-buttons button {
@@ -382,7 +415,7 @@ a {
     padding: 10px 18px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     transition: all 0.3s ease;
     min-width: 40px;
 }
@@ -398,10 +431,10 @@ a {
 }
 
 .code-message {
-    width: 35%;
+    flex: 1;
     text-align: right;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
     font-weight: bold;
     padding-left: 20px;
     opacity: 0;
@@ -430,13 +463,13 @@ a {
 }
 
 .documentation-hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .documentation-hero p {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 600px;
     margin: 0 auto 2rem;
     opacity: 0.9;
@@ -449,6 +482,7 @@ a {
     font-weight: bold;
     display: inline-block;
     margin-bottom: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 /* Documentation Container */
@@ -477,11 +511,13 @@ a {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .doc-title {
     color: var(--text);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     margin: 0;
     display: flex;
     align-items: center;
@@ -496,6 +532,7 @@ a {
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .doc-btn {
@@ -511,7 +548,8 @@ a {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    white-space: nowrap;
 }
 
 .doc-btn:hover {
@@ -554,6 +592,8 @@ a {
     height: 400px;
     background: #f8f9fa;
     color: #666;
+    text-align: center;
+    padding: 2rem;
 }
 
 .pdf-loading i {
@@ -634,13 +674,14 @@ a {
 .info-item h4 {
     color: var(--text);
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .info-item p {
     color: #666;
     margin: 0;
     line-height: 1.5;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Quick Links */
@@ -657,7 +698,7 @@ a {
 }
 
 .quick-links h3 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 2rem;
 }
 
@@ -693,12 +734,12 @@ a {
 
 .quick-link h5 {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 .quick-link p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     opacity: 0.8;
 }
 
@@ -712,13 +753,13 @@ a {
 }
 
 .download-hero h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .download-hero p {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
     max-width: 600px;
     margin: 0 auto 2rem;
     opacity: 0.9;
@@ -731,6 +772,7 @@ a {
     font-weight: bold;
     display: inline-block;
     margin-bottom: 1rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
 }
 
 /* Downloads Table Container */
@@ -746,13 +788,13 @@ a {
 }
 
 .downloads-header h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     color: var(--text);
     margin-bottom: 1rem;
 }
 
 .downloads-header p {
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     color: #666;
     max-width: 500px;
     margin: 0 auto;
@@ -765,11 +807,13 @@ a {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     margin-bottom: 3rem;
+    overflow-x: auto;
 }
 
 .downloads-table table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
 }
 
 .downloads-table th {
@@ -778,7 +822,7 @@ a {
     padding: 1.5rem;
     text-align: left;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 .downloads-table td {
@@ -807,6 +851,7 @@ a {
     font-size: 2rem;
     width: 50px;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .os-icon.windows { color: #0078d4; }
@@ -815,14 +860,14 @@ a {
 
 .os-details h4 {
     margin: 0 0 0.25rem 0;
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--text);
 }
 
 .os-details p {
     margin: 0;
     color: #666;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 /* Version Info */
@@ -833,12 +878,12 @@ a {
 .version-number {
     font-weight: bold;
     color: var(--primary-orange);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
 .release-date {
     color: #666;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     margin-top: 0.25rem;
 }
 
@@ -847,6 +892,7 @@ a {
     text-align: center;
     font-weight: 500;
     color: var(--text);
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Download Button */
@@ -863,6 +909,8 @@ a {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    white-space: nowrap;
 }
 
 .download-btn:hover {
@@ -886,7 +934,7 @@ a {
 
 .system-requirements h3 {
     color: var(--dark-blue);
-    font-size: 1.8rem;
+    font-size: clamp(1.5rem, 3vw, 1.8rem);
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -915,6 +963,7 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .requirement-item h4 i {
@@ -932,6 +981,7 @@ a {
     color: #666;
     position: relative;
     padding-left: 1.5rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .requirement-item li::before {
@@ -953,7 +1003,7 @@ a {
 .installation-guide h3 {
     text-align: center;
     color: var(--text);
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 2rem;
 }
 
@@ -977,6 +1027,7 @@ a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .step-number {
@@ -990,12 +1041,14 @@ a {
     justify-content: center;
     font-size: 0.9rem;
     font-weight: bold;
+    flex-shrink: 0;
 }
 
 .installation-step p {
     margin: 0;
     color: #666;
     line-height: 1.6;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 /* Footer */
@@ -1024,12 +1077,13 @@ a {
 .footer-logo img {
     height: 50px;
     margin-bottom: 0.5rem;
+    transition: height 0.3s ease;
 }
 
 .footer-logo p {
     margin: 0;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .footer-social,
@@ -1047,6 +1101,7 @@ a {
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .footer-links a:hover,
@@ -1055,13 +1110,13 @@ a {
 }
 
 .footer-social i {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
-    font-size: 0.9rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
     opacity: 0.8;
 }
 
@@ -1118,7 +1173,7 @@ a {
 
 /* Utility Classes */
 .section-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     color: white;
     font-weight: bold;
     display: inline-block;
@@ -1129,19 +1184,59 @@ a {
 .string { color: #a5d6ff; }
 .output { color: #d2a8ff; }
 
-/* Responsive Styles */
+/* Responsive Media Queries */
+
+/* Large Tablets and Small Desktops */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    
+    .noobie {
+        padding: 3rem 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .about-intro-section,
+    .vision-section,
+    .why-noobie-section,
+    .future-section {
+        padding: 3rem 1.5rem;
+        margin: 1.5rem auto;
+    }
+    
+    .icon-left,
+    .icon-right {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    .code-example {
+        padding: 25px;
+        max-width: 95%;
+    }
+    
+    .downloads-container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
-    /* Navbar */
+    /* Mobile Navigation */
     .navbar ul {
         flex-direction: column;
         gap: 1rem;
-        background-color: rgba(0, 0, 0, 0.7);
-        padding: 1rem;
+        background: linear-gradient(to bottom, rgba(44, 122, 138, 0.95), rgba(242, 107, 29, 0.95));
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
         position: absolute;
         top: 100%;
         right: 0;
         left: 0;
         display: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 0 0 15px 15px;
     }
 
     .navbar ul.show {
@@ -1156,27 +1251,93 @@ a {
         display: block;
     }
 
-    /* Hero Section */
+    /* Hero Section Mobile */
     .noobie {
         flex-direction: column;
         text-align: center;
+        padding: 2rem 1rem;
+        min-height: auto;
     }
 
     .noobie-content {
         text-align: center;
+        order: 2;
     }
 
     .noobie-image {
-        margin-top: 2rem;
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .noobie-image img {
+        max-height: 250px;
+    }
+
+    /* About Page Sections Mobile */
+    .about-intro-section,
+    .vision-section,
+    .why-noobie-section,
+    .future-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+        margin: 1rem auto;
+        max-width: 95%;
+    }
+
+    .intro-content,
+    .vision-content,
+    .why-noobie-content,
+    .future-content {
+        order: 2 !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-icon,
+    .vision-icon,
+    .why-noobie-icon,
+    .future-icon {
+        order: 1 !important;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        padding: 0 !important;
+        flex: none;
+    }
+
+    .right,
+    .left {
+        text-align: center !important;
+    }
+
+    /* Code Example Mobile */
+    .code-example {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 20px;
+        max-width: 98%;
+    }
+    
+    .code-container {
+        width: 100%;
+        order: 1;
+    }
+    
+    .code-message {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        order: 2;
+    }
+
+    .code-block {
+        padding: 15px;
+        font-size: 0.9rem;
     }
 
     /* Documentation Page Mobile */
-    .documentation-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .documentation-hero p {
-        font-size: 1.1rem;
+    .documentation-hero {
+        padding: 2rem 1rem;
     }
 
     .doc-header {
@@ -1185,17 +1346,12 @@ a {
 
     .doc-header-content {
         flex-direction: column;
-        gap: 1rem;
         text-align: center;
     }
 
-    .doc-title {
-        font-size: 1.5rem;
-    }
-
     .doc-actions {
-        flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
     }
 
     .pdf-container {
@@ -1226,29 +1382,17 @@ a {
     }
 
     /* Download Page Mobile */
-    .download-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .download-hero p {
-        font-size: 1.1rem;
+    .download-hero {
+        padding: 2rem 1rem;
     }
 
     .downloads-container {
         padding: 0 1rem;
     }
 
-    .downloads-table {
-        overflow-x: auto;
-    }
-
-    .downloads-table table {
-        min-width: 600px;
-    }
-
     .downloads-table th,
     .downloads-table td {
-        padding: 1rem;
+        padding: 1rem 0.5rem;
     }
 
     .os-info {
@@ -1278,67 +1422,11 @@ a {
         padding: 1rem;
     }
 
-    /* About Page Sections */
-    .about-intro-section,
-    .vision-section,
-    .why-noobie-section,
-    .future-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 2.5rem 1.5rem;
-        margin: 1rem auto;
+    /* Footer Mobile */
+    .footer {
+        padding: 2rem 1rem 1rem 1rem;
     }
 
-    .intro-content,
-    .vision-content,
-    .why-noobie-content,
-    .future-content {
-        order: 2 !important;
-        margin-bottom: 1.5rem;
-    }
-
-    .intro-icon,
-    .vision-icon,
-    .why-noobie-icon,
-    .future-icon {
-        order: 1 !important;
-        font-size: 4rem;
-        margin-bottom: 1rem;
-        padding: 0 !important;
-    }
-
-    .intro-content h2,
-    .vision-content h2,
-    .why-noobie-content h2,
-    .future-content h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .right,
-    .left {
-        text-align: center !important;
-    }
-
-    /* Code Example */
-    .code-example {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-    
-    .code-container {
-        width: 100%;
-    }
-    
-    .code-message {
-        width: 100%;
-        text-align: center;
-        padding-left: 0;
-        font-size: 1.5rem;
-    }
-
-    /* Footer */
     .footer-container {
         flex-direction: column;
         gap: 1.5rem;
@@ -1356,46 +1444,85 @@ a {
     }
 }
 
+/* Small Mobile Devices */
 @media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar .logo img {
+        height: 45px;
+    }
+
+    .noobie {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .noobie-image img {
+        max-height: 200px;
+    }
+
+    .about-intro-section,
+    .vision-section,
+    .why-noobie-section,
+    .future-section {
+        padding: 1.5rem 0.5rem;
+        margin: 0.5rem auto;
+        border-radius: 10px;
+    }
+
+    .intro-icon,
+    .vision-icon,
+    .why-noobie-icon,
+    .future-icon {
+        font-size: 3rem;
+    }
+
+    .code-example {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    .code-block {
+        padding: 10px;
+    }
+
+    .code-buttons {
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .code-buttons button {
+        padding: 8px 15px;
+        min-width: 35px;
+    }
+
+    .downloads-table th,
+    .downloads-table td {
+        padding: 0.75rem 0.25rem;
+        font-size: 0.85rem;
+    }
+
+    .download-btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .system-requirements,
+    .installation-guide {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .installation-step {
+        padding: 0.75rem;
+    }
+
     .footer-links a,
     .footer-social a {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .footer-social i {
-        font-size: 1.2rem;
-    }
-    
-    .code-block {
-        font-size: 0.9rem;
-    }
-
-    .intro-content h2,
-    .vision-content h2,
-    .why-noobie-content h2,
-    .future-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .intro-content p,
-    .vision-content p,
-    .why-noobie-content p,
-    .future-content p {
-        font-size: 1rem;
-    }
-
-    /* Documentation Page Small Mobile */
-    .documentation-hero h1 {
-        font-size: 2rem;
-    }
-
-    .doc-title {
-        font-size: 1.3rem;
-    }
-
-    .doc-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
     }
 
     .pdf-container {
@@ -1408,38 +1535,164 @@ a {
     }
 
     .quick-links h3 {
-        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .quick-link i {
         font-size: 1.5rem;
     }
+}
 
-    .quick-link h5 {
-        font-size: 1rem;
+/* Extra Small Mobile Devices */
+@media (max-width: 360px) {
+    .navbar {
+        padding: 0.5rem 0.8rem;
     }
 
-    .quick-link p {
-        font-size: 0.8rem;
+    .navbar .logo img {
+        height: 40px;
     }
 
-    /* Download Page Small Mobile */
-    .download-hero h1 {
-        font-size: 2rem;
+    .noobie {
+        padding: 1rem 0.3rem;
     }
 
-    .downloads-header h2 {
-        font-size: 2rem;
+    .about-intro-section,
+    .vision-section,
+    .why-noobie-section,
+    .future-section {
+        padding: 1rem 0.3rem;
+        margin: 0.3rem auto;
+    }
+
+    .code-example {
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .downloads-container {
+        padding: 0 0.5rem;
     }
 
     .downloads-table th,
     .downloads-table td {
-        padding: 0.75rem 0.5rem;
-        font-size: 0.9rem;
+        padding: 0.5rem 0.2rem;
+        font-size: 0.8rem;
     }
 
-    .download-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+    .requirement-item,
+    .installation-step {
+        padding: 0.5rem;
+    }
+
+    .system-requirements,
+    .installation-guide {
+        padding: 1rem 0.3rem;
+    }
+
+    .footer {
+        padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    }
+
+    .footer-links,
+    .footer-social {
+        gap: 0.8rem;
+    }
+}
+
+/* Landscape Mobile Devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    .noobie {
+        flex-direction: row;
+        padding: 2rem 1rem;
+        min-height: auto;
+    }
+
+    .noobie-content {
+        text-align: left;
+        order: 1;
+    }
+
+    .noobie-image {
+        order: 2;
+        margin-bottom: 0;
+        margin-left: 1rem;
+    }
+
+    .noobie-image img {
+        max-height: 200px;
+    }
+
+    .pdf-container {
+        height: calc(100vh - 250px);
+        min-height: 200px;
+    }
+
+    .documentation-hero,
+    .download-hero {
+        padding: 2rem 1rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar .logo img,
+    .footer-logo img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .footer,
+    .menu-icon,
+    .doc-actions,
+    .code-buttons {
+        display: none;
+    }
+
+    .noobie,
+    .about-intro-section,
+    .vision-section,
+    .why-noobie-section,
+    .future-section {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+
+    .code-example {
+        background: white !important;
+        border: 1px solid #ddd;
+    }
+
+    .code-block {
+        background: #f8f9fa !important;
+        color: #333 !important;
+    }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .menu-icon:hover {
+        transform: none;
+    }
+
+    .code-message {
+        animation: none;
+        opacity: 1;
+        transform: translateX(0);
     }
 }
