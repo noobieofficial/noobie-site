@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Complete NOOBIE programming language documentation. Learn syntax, functions, and examples to master NOOBIE programming.">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" sizes="16x16" href="../logo_immagini/logo_originale2.png" type="image/png">
+        <title>NOOBIE Documentation - Programming for Everyone</title>
+    </head>
+    <body>
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        
+        <nav class="navbar">
+            <div class="logo">
+            <a href="index.html"><img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
+            </div>
+            <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+            
+            <!-- Mobile Sidebar -->
+            <div class="mobile-sidebar" id="mobile-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-logo">
+                        <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" />
+                    </div>
+                    <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <ul class="sidebar-menu">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa fa-user"></i> About Us</a></li>
+                    <li><a href="documentation.html"><i class="fa fa-file-text"></i> Documentation</a></li>
+                </ul>
+                <div class="sidebar-footer">
+                    <div class="sidebar-social">
+                        <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                    </div>
+                    <p>Programming for Everyone</p>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </nav>
+
+        <!-- Documentation Container -->
+        <div class="documentation-container">
+            <!-- Doc Header with Controls -->
+            <div class="doc-header">
+                <div class="doc-header-content">
+                    <h2 class="doc-title">
+                        <i class="fa fa-file-pdf-o"></i>
+                        NOOBIE Programming Guide
+                    </h2>
+                    <div class="doc-actions">
+                        <a href="noobie-documentation.pdf" class="doc-btn" download>
+                            <i class="fa fa-download"></i>
+                            Download PDF
+                        </a>
+                        <a href="noobie-documentation.pdf" class="doc-btn secondary" target="_blank">
+                            <i class="fa fa-external-link"></i>
+                            Open in New Tab
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PDF Viewer -->
+            <div class="pdf-container">
+                <iframe 
+                    src="noobie-documentation.pdf" 
+                    class="pdf-viewer"
+                    title="NOOBIE Documentation PDF"
+                    onload="hidePdfLoading()"
+                    onerror="showPdfError()">
+                </iframe>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
+                    <p>Programming for Everyone</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="documentation.html">Documentation</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NOOBIE. Made with ❤️ for beginner coders.</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+        <script>
+            // PDF Loading and Error Handling
+            function hidePdfLoading() {
+                const loading = document.getElementById('pdf-loading');
+                if (loading) {
+                    loading.style.display = 'none';
+                }
+            }
+
+            function showPdfError() {
+                const loading = document.getElementById('pdf-loading');
+                const error = document.getElementById('pdf-error');
+                if (loading) loading.style.display = 'none';
+                if (error) error.style.display = 'flex';
+            }
+
+            // Check if PDF loaded successfully after a timeout
+            setTimeout(function() {
+                const iframe = document.querySelector('.pdf-viewer');
+                const loading = document.getElementById('pdf-loading');
+                
+                try {
+                    // Try to access iframe content to check if PDF loaded
+                    if (iframe && iframe.contentDocument === null) {
+                        // PDF likely failed to load
+                        showPdfError();
+                    } else {
+                        hidePdfLoading();
+                    }
+                } catch (e) {
+                    // Cross-origin error means PDF is likely loaded
+                    hidePdfLoading();
+                }
+            }, 3000);
+        </script>
+    </body>
+</html>
