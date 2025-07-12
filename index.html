@@ -9,29 +9,60 @@
     <title>NOOBIE - Programming for Everyone</title>
 </head>
 <body>
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
     <nav class="navbar">
         <div class="logo">
-          <a href="index.html"><img src="loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
+          <a href="index.html"><img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
         </div>
-        <ul>
+        <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="documentation.html">Documentation</a></li>
         </ul>
-        <div class="menu-icon" onclick="toggleMenu()">
-          <i class="fa fa-bars"></i>
+        
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" />
+                </div>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa fa-user"></i> About Us</a></li>
+                <li><a href="documentation.html"><i class="fa fa-file-text"></i> Documentation</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="sidebar-social">
+                    <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                </div>
+                <p>Programming for Everyone</p>
+            </div>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
     </nav>
     
-    <!-- INSTANT DOWNLOAD -->
-    <section class="noobie" id="home">
-      <div class="noobie-content">
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-content">
         <h1>Learn programming from scratch</h1>
-        <p>NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !</p>
-        <a href="https://noobie-web.onrender.com/" class="cta-button" target="_blank">Start coding  </a>
+        <p>NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze!</p>
+        <a href="https://noobie-ide.onrender.com" class="cta-button" target="_blank">Start coding</a>
       </div>
-      <div class="noobie-image">
-       <a href="index.html"><img src="loghi/logo_originale.png" alt="noobie" /></a>
+      <div class="hero-image">
+       <a href="index.html"><img src="../loghi/logo_originale.png" alt="noobie" /></a>
       </div>
     </section>
     
@@ -53,7 +84,7 @@
         </div>
       </div>
       <div class="code-message">
-        <h1 class="section-title">Coding is simple, fun, and powerful!</h1>
+        <h2 class="section-title">Coding is simple, fun, and powerful!</h2>
       </div>
     </section>
 
@@ -61,7 +92,7 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-logo">
-          <img src="loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
+          <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
           <p>Programming for Everyone</p>
         </div>
         <div class="footer-links">
@@ -70,9 +101,9 @@
           <a href="documentation.html">Documentation</a>
         </div>
         <div class="footer-social">
-          <a href="https://noobie-web.onrender.com/"><i class="fa fa-file"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="https://github.com/noobieofficial"><i class="fa fa-github"></i></a>
+          <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
         </div>
       </div>
       <div class="footer-bottom">
