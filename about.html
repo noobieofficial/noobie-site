@@ -1,47 +1,79 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
-        <title>About NOOBIE - Programming for Everyone</title>
-    </head>
-    <body>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>About NOOBIE - Programming for Everyone</title>
+</head>
+<body>
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" /></a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="documentation.html">Documentation</a></li>
+        </ul>
+        
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobile-sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE logo" />
+                </div>
+                <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                    <i class="fa fa-times"></i>
+                </button>
             </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="documentation.html">Documentation</a></li>
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fa fa-user"></i> About Us</a></li>
+                <li><a href="documentation.html"><i class="fa fa-file-text"></i> Documentation</a></li>
             </ul>
-            <div class="menu-icon" onclick="toggleMenu()">
-                <i class="fa fa-bars"></i>
+            <div class="sidebar-footer">
+                <div class="sidebar-social">
+                    <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
+                </div>
+                <p>Programming for Everyone</p>
             </div>
-        </nav>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
 
-        <div class="about-intro-section">
-            <div class="intro-content right">
-                <h2>Hi, I'm <span class="me">Luca</span>, the creator of NOOBIE!</h2>
+    <main class="about-main">
+        <section class="about-intro-section">
+            <div class="intro-content">
+                <h1>Hi, I'm <span class="me">Luca</span>, the creator of NOOBIE!</h1>
                 <p>I am just a 17-year-old Italian boy with a great passion for programming.
                     I started writing code when I was only 11, driven by curiosity and the desire to create.
                     Over the years I have experimented, learned and improved one project (and a few bugs) at a time.
                     I enjoy taking on new challenges, finding creative solutions and growing a little bit every day.
                     It is because of all this that NOOBIE was born.</p>
             </div>
-            <div class="intro-icon icon-right">
+            <div class="intro-icon">
                 <i class="fa fa-child"></i>
             </div>            
-        </div>
+        </section>
 
-        <div class="vision-section">
-            <div class="vision-icon icon-left">
+        <section class="vision-section">
+            <div class="vision-icon">
                 <i class="fa fa-lightbulb-o"></i>
             </div>
-            <div class="vision-content left">
+            <div class="vision-content">
                 <h2>My vision of NOOBIE</h2>
                 <p>
                     For me NOOBIE is not just a programming language, I want NOOBIE to be a concept that inspires creativity and innovation.
@@ -52,10 +84,10 @@
                     My goal is to create tools that make learning to code fun and engaging while also being powerful enough to build real-world applications.
                 </p>
             </div>
-        </div>
+        </section>
 
-        <div class="why-noobie-section">
-            <div class="why-noobie-content right">
+        <section class="why-noobie-section">
+            <div class="why-noobie-content">
                 <h2>Why choose NOOBIE?</h2>
                 <p>
                     NOOBIE stands out because it's designed with beginners in mind. Unlike other programming languages that can be intimidating,
@@ -66,46 +98,47 @@
                     It's powerful enough for serious projects but simple enough that anyone can learn it.
                 </p>
             </div>
-            <div class="why-noobie-icon icon-right">
+            <div class="why-noobie-icon">
                 <i class="fa fa-question-circle"></i>
             </div>
-        </div>
+        </section>
 
-        <div class="future-section">
-            <div class="future-icon icon-left">
+        <section class="future-section">
+            <div class="future-icon">
                 <i class="fa fa-rocket"></i>
             </div>
-            <div class="future-content left">
+            <div class="future-content">
                 <h2>The Future is NOOBIE</h2>
                 <p>I'm super excited to continue growing NOOBIE! I have so many ideas for new features and useful resources for those who use it.
                    I'm thinking of ready-to-use code libraries and even more detailed guides. I hope you'll want to join me on this journey!</p>
-                <p>Thank you for being here! If you're curious,start your adventure in the world of programming!.
+                <p>Thank you for being here! If you're curious, start your adventure in the world of programming!
                    Every comment and feedback from you is precious!</p>
             </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
+                <p>Programming for Everyone</p>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="documentation.html">Documentation</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fa fa-book"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fa fa-github"></i></a>
+            </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NOOBIE. Made with ❤️ for beginner coders.</p>
+        </div>
+    </footer>
 
-        <footer class="footer">
-            <div class="footer-container">
-                <div class="footer-logo">
-                    <img src="loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
-                    <p>Programming for Everyone</p>
-                </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="documentation.html">Documentation</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://noobie-web.onrender.com/"><i class="fa fa-file"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="https://github.com/noobieofficial"><i class="fa fa-github"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 NOOBIE. Made with ❤️ for beginner coders.</p>
-            </div>
-        </footer>
-
-        <script src="script.js"></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
