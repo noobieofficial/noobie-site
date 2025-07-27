@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NOOBIE | Settings </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="16x16" href="loghi/logo_originale.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="NOOBIE is a programming language designed for people starting from scratch. Simple syntax, vast versatility and lots of fun. With NOOBIE programming will be a breeze !">
+</head>
+<body>
+    <div id="overlay"></div>
+
+    <div class="mobile-sidebar" id="mobile-sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="loghi/logo_scritta_bianco.png" alt="NOOBIE logo" />
+            </div>
+            <button class="sidebar-close" id="sidebar-close" aria-label="Close menu">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="sidebar-line"></div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html" data-i18n="nav.home"><i class="fas fa-home"></i> <span class="text">Home</span></a></li>
+            <li><a href="about.html" data-i18n="nav.about"><i class="fas fa-user"></i> <span class="text">About Us</span></a></li>
+            <li><a href="documentation.html" data-i18n="nav.docs"><i class="fas fa-file-text"></i> <span class="text">Documentation</span></a></li>
+            <li><a href="settings.html" data-i18n="nav.settings"><i class="fas fa-gear"></i> <span class="text">Settings</span></a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <div class="sidebar-social">
+                <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fas fa-book"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <!-- Static English slogan (excluded from translation) -->
+            <p>Programming for Everyone</p>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-nav">
+            <a href="/"><img src="loghi/logo_scritta_bianco.png" alt="NOOBIE logo"></a>
+        </div>
+
+        <ul class="nav-menu">
+            <li><a href="/" data-i18n="nav.home">Home</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="documentation.html" data-i18n="nav.docs">Documentation</a></li>
+            <li><a href="settings.html" data-i18n="nav.settings">Settings</a></li>
+        </ul>
+
+        <div class="hamburger-menu" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <main class="setting-main">
+        <div class="settings-menu">
+            <h2 class="settings-title" data-i18n="settings.title">Settings</h2>
+
+            <div class="settings-section">
+                <h3 data-i18n="settings.language">Language</h3>
+                <div class="language-toggle">
+                    <button id="english" class="language-button active">English</button>
+                    <button id="italian" class="language-button">Italiano</button>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3 data-i18n="settings.cookie">Cookie Consent</h3>
+                <div class="cookie-toggle">
+                    <span data-i18n="settings.cookie.description">Allow essential cookies for a better experience</span>
+                    <label class="switch">
+                        <input type="checkbox" id="cookie">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="../loghi/logo_scritta_bianco.png" alt="NOOBIE Logo" />
+          <p>Programming for Everyone</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="documentation.html">Documentation</a>
+          <a href="settings.html">Settings</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://noobie-web.onrender.com" aria-label="IDE"><i class="fas fa-book"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/noobieofficial" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NOOBIE. Made with ❤️ for beginner coders.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
