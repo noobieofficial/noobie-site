@@ -26,10 +26,9 @@ const translations = {
     "noobie.button": "start coding",
     "settings.cookie": "Cookie Consent",
     "code.title": "Noobie Code Example",
-    "about.why.title": "Why choose NOOBIE",
+    "about.why.title": "The futurue is NOOBIE",
     "documentation.open": "Open in New Tab",
     "documentation.download": "Download PDF",
-    "about.why.title": "The futurue is NOOBIE",
     "about.vision.title": "My vision of NOOBIE",
     "noobie.title": "Learn programming from scratch",
     "documentation.title": "NOOBIE Programming Guide",
@@ -96,8 +95,6 @@ const code = [
    <span class="output">--> x + y = 8</span>`
 ]
 
-
-
 // GESTIONE DELLA SIDEBAR
 if (hamburger && sidebar && overlay) {
   hamburger.addEventListener('click', () => {
@@ -106,6 +103,7 @@ if (hamburger && sidebar && overlay) {
       sidebar.classList.remove("close");
       sidebar.classList.add("open");
       overlay.classList.add("active");
+      document.body.classList.add("no-scroll");
       pressed = true;
     } else {
       closeSidebar();
@@ -126,6 +124,7 @@ function closeSidebar() {
     sidebar.classList.remove("open");
     sidebar.classList.add("close");
     overlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
 
     setTimeout(() => {
       sidebar.style.display = "none";
